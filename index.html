@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="img/logo.png" type="image/png">
+    <title>Moony</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-left">
+            <img src="img/logo.png" alt="Logo" class="logo">
+            <ul class="nav-links">
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#">TV Series</a></li>
+                <li><a href="#">Movies</a></li>
+                <li><a href="#">My List</a></li>
+            </ul>
+        </div>
+        <div class="nav-right">
+            <!-- NETFLIX STYLE EXPANDABLE SEARCH COMPONENT -->
+            <div class="search-container" id="searchContainer">
+                <i class="fas fa-search search-icon" id="searchIcon"></i>
+                <input type="text" class="search-input" id="searchInput" placeholder="Titoli, generi, persone...">
+                <i class="fas fa-times clear-icon" id="clearSearch" style="display: none;"></i>
+            </div>
+            
+            <i class="fas fa-bell icon"></i>
+            <img src="img/profilepicture.png" alt="Avatar" class="avatar">
+        </div>
+    </nav>
+
+    <!-- BANNER PRINCIPALE (HERO) -->
+    <header class="hero-banner" id="heroBanner">
+        <div class="hero-image-container">
+            <img src="img/spidermanbnd.jpg" alt="Spider-Man Background" class="hero-bg-img">
+            <div class="hero-vignette"></div>
+        </div>
+
+        <div class="hero-content">
+            <span class="hero-category">Show • Movie • 2026 • 13+</span>
+            <h1 class="hero-title" id="heroTitle">SPIDER-MAN</h1>
+            <p class="hero-description" id="heroDesc">L'eroe di Spider-Man affronta nuove minacce mentre protegge la città di New York.</p>
+            
+            <div class="hero-buttons">
+                <button class="btn btn-play" id="heroPlayBtn"><i class="fas fa-play"></i> Riproduci</button>
+                <button class="btn btn-info" id="heroInfoBtn"><i class="fas fa-info-circle"></i> Altre info</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- HOMEPAGE STANDARD VIEWPORT CONTAINER -->
+    <div id="homepageView">
+        <!-- CONTENITORE DELLE RIGHE DI FILM -->
+        <main class="container">
+            
+            <!-- Row 1: Top Searches -->
+            <section class="row">
+                <h2 class="row-title">Top Searches</h2>
+                <div class="row-posters" id="rowTopSearches"></div>
+            </section>
+
+            <!-- Row 2: Continue Watching -->
+            <section class="row">
+                <h2 class="row-title">Continue Watching for Gigi Becali</h2>
+                <div class="row-posters" id="rowContinueWatching"></div>
+            </section>
+
+            <!-- Row 3: 30-Minute Hits -->
+            <section class="row">
+                <h2 class="row-title">In a Hurry? Try These 30-Minute Hits</h2>
+                <div class="row-posters" id="rowShortHits"></div>
+            </section>
+
+            <!-- Row 4: Korean TV Dramas -->
+            <section class="row">
+                <h2 class="row-title">Korean TV Dramas</h2>
+                <div class="row-posters" id="rowKoreanDramas"></div>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- DYNAMIC NETFLIX SEARCH RESULT GRID LAYER (Initially Hidden) -->
+    <div id="searchGridView" class="search-grid-view" style="display: none;">
+        <div class="suggestions-ribbon">
+            <span class="ribbon-label">More to explore:</span>
+            <div class="ribbon-tags" id="ribbonTags"></div>
+        </div>
+        <div class="grid-container" id="netflixGridResults"></div>
+    </div>
+
+    <!-- INTERFACCIA DI RIPRODUZIONE VIDEO A SCHERMO INTERO STILE NETFLIX -->
+    <div class="modal" id="movieModal">
+        
+        <!-- Livello principale del video (Contiene l'Iframe iniettato da JavaScript) -->
+        <div class="trend-container"></div>
+
+        <!-- LIVELLO OVERLAY DEI CONTROLLI UTENTE IN PRIMO PIANO -->
+        <div class="player-controls-overlay">
+            
+            <!-- Barra Superiore (Pulsante Indietro con Freccia) -->
+            <div class="player-top-bar">
+                <button class="player-back-btn" id="closeModal">
+                    <i class="fas fa-arrow-left"></i>
+                </button>
+            </div>
+
+            <!-- Barra Inferiore (Linea Temporale e Cruscotto di Controllo) -->
+            <div class="player-bottom-bar">
+                
+                <!-- Barra della linea temporale (Timeline progress slider track) -->
+                <div class="player-timeline-wrapper">
+                    <div class="player-progress-lane">
+                        <div class="player-progress-fill" style="width: 35%;"></div>
+                        <div class="player-progress-handle"></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
